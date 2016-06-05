@@ -5,8 +5,9 @@ public class StateManager : MonoBehaviour {
 
 	public enum States {
 		START,
-		GOL,
-		PLAYER_TURN
+		GOAL,
+		PLAYER_TURN,
+		WAITING_FOR_PHYSICS
 	}
 		
 	public States state;

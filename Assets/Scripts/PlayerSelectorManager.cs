@@ -3,27 +3,28 @@ using System.Collections;
 
 public class PlayerSelectorManager : MonoBehaviour {
 
-	int selectedPlayer;
+	private int selectedPlayer = 0;
 	StateManager stateManager;
 	TurnManager turnManager;
 	GameObject currentTeam;
-	GameObject currentPlayer;
+	public GameObject currentPlayer;
 	public Light lightSelection;
 
 	void Awake () {
 		stateManager = Component.FindObjectOfType<StateManager> ();
 		turnManager = Component.FindObjectOfType<TurnManager> ();
+		Selection (selectedPlayer);
 	}
 	void Update() {
 		if (stateManager.state == StateManager.States.PLAYER_TURN) {
-			SelectPlayer ();
+			GetIndex ();
 			if (selectedPlayer != -1) {
 				Selection (selectedPlayer);
 			}
 		}
 	}
 
-	void SelectPlayer(){
+	void GetIndex(){
 		if (Input.GetKeyDown (KeyCode.I)) {
 			selectedPlayer = 0;
 			return;
@@ -57,6 +58,9 @@ public class PlayerSelectorManager : MonoBehaviour {
 			currentPlayer.transform.position.x, 0.8f, currentPlayer.transform.position.z);
 
 		lightSelection.transform.position = pos;
+		lightSelection.transform.SetParent (currentPlayer.transform);
+
+		Debug.Log (currentPlayer.name);
 
 	}
 
