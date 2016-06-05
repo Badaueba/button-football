@@ -1,0 +1,170 @@
+fileFormatVersion: 2
+guid: 33493f8055c7a43589516d045763dd73
+timeCreated: 1465100801
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Brasil-2008_0
+    21300002: Brasil-2008_1
+    21300004: Brasil-2008_2
+    21300006: Brasil-2008_3
+    21300008: Brasil-2008_4
+    21300010: Brasil-2008_5
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 65, y: 65, z: 267, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Brasil-2008_0
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 0
+        width: 66
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 33.5}
+        - {x: -33, y: -33.5}
+        - {x: 33, y: -33.5}
+        - {x: 33, y: 33.5}
+      tessellationDetail: 0
+    - name: Brasil-2008_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 66
+        width: 66
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 33.5}
+        - {x: -33, y: -33.5}
+        - {x: 33, y: -33.5}
+        - {x: 33, y: 33.5}
+      tessellationDetail: 0
+    - name: Brasil-2008_2
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 66
+        width: 66
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 33.5}
+        - {x: -33, y: -33.5}
+        - {x: 33, y: -33.5}
+        - {x: 33, y: 33.5}
+      tessellationDetail: 0
+    - name: Brasil-2008_3
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 66
+        width: 66
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 33.5}
+        - {x: -33, y: -33.5}
+        - {x: 33, y: -33.5}
+        - {x: 33, y: 33.5}
+      tessellationDetail: 0
+    - name: Brasil-2008_4
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 66
+        width: 66
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 33.5}
+        - {x: -33, y: -33.5}
+        - {x: 33, y: -33.5}
+        - {x: 33, y: 33.5}
+      tessellationDetail: 0
+    - name: Brasil-2008_5
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 66
+        width: 66
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 33.5}
+        - {x: -33, y: -33.5}
+        - {x: 33, y: -33.5}
+        - {x: 33, y: 33.5}
+      tessellationDetail: 0
+    outline:
+    - - {x: 200, y: 133}
+      - {x: 317.55707, y: 120.29963}
+      - {x: 390.2113, y: 87.04963}
+      - {x: 390.2113, y: 45.950367}
+      - {x: 317.55704, y: 12.700367}
+      - {x: 199.99998, y: 0}
+      - {x: 82.442924, y: 12.700375}
+      - {x: 9.788696, y: 45.950363}
+      - {x: 9.788696, y: 87.04964}
+      - {x: 82.44301, y: 120.29965}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
