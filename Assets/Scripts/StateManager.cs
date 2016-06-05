@@ -12,7 +12,7 @@ public class StateManager : MonoBehaviour {
 	public States state;
 
 	void Start() {
-		state = States.START;
+		state = States.PLAYER_TURN;
 	}
 
 }
