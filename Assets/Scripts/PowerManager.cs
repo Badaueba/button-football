@@ -6,7 +6,7 @@ public class PowerManager : MonoBehaviour {
 
 	private StateManager stateManager;
 	private TurnManager turnManager;
-	public Transform powerPanel;
+	public PowerBar powerBarManager;
 	private bool canThrow = false;
 	private float input = 0.0f;
 	private float lastInput = 0.0f;
@@ -16,6 +16,7 @@ public class PowerManager : MonoBehaviour {
 	void Awake () {
 		stateManager = Component.FindObjectOfType<StateManager> ();
 		turnManager = Component.FindObjectOfType<TurnManager> ();
+		powerBarManager = Component.FindObjectOfType<PowerBar> ();
 	}
 	void Update() {
 		
@@ -39,14 +40,16 @@ public class PowerManager : MonoBehaviour {
 		}
 		//aumentar/diminuir o tamanho da UI de acordo com power
 		if (power > 0.0f) {
-			powerPanel.localScale = new Vector3 (power, 11, 1);
+			powerBarManager.ChangeScale(new Vector3 (power, 11, 1));
 		}
 	}
 	void CanITrhow() {
 		//Teste para saber se o player soltou a power bar
 		if (input < lastInput) {
 			//conclui sua vez, agora muda o estado do jogo
-			stateManager.state = StateManager.States.WAITING_FOR_PHYSICS;
+			stateManager.state = StateManager.States.PLAYER_KICK;
+			lastInput = 0.0f;
+			input = 0.0f;
 			return;
 		}
 		//atualiza o ultimo input do frame

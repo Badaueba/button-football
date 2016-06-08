@@ -13,15 +13,23 @@ public class PlayerSelectorManager : MonoBehaviour {
 	void Awake () {
 		stateManager = Component.FindObjectOfType<StateManager> ();
 		turnManager = Component.FindObjectOfType<TurnManager> ();
-		Selection (selectedPlayer);
+
 	}
+	void Start() {
+		Selection ();
+	}
+
 	void Update() {
+		
 		if (stateManager.state == StateManager.States.PLAYER_TURN) {
 			GetIndex ();
 			if (selectedPlayer != -1) {
-				Selection (selectedPlayer);
+				Selection ();
 			}
 		}
+		//Debug
+		if (Input.GetKeyUp (KeyCode.Escape))
+			Application.LoadLevel (0);
 	}
 
 	void GetIndex(){
@@ -47,7 +55,8 @@ public class PlayerSelectorManager : MonoBehaviour {
 
 	}
 
-	void Selection(int value) {
+	public void Selection() {
+		
 		foreach (Team team in GameObject.FindObjectsOfType<Team>()) {
 			if (team.id == turnManager.teamTurn) {
 				currentTeam = team.gameObject;
@@ -59,9 +68,7 @@ public class PlayerSelectorManager : MonoBehaviour {
 
 		lightSelection.transform.position = pos;
 		lightSelection.transform.SetParent (currentPlayer.transform);
-
-		Debug.Log (currentPlayer.name);
-
+		selectedPlayer = 0;
 	}
 
 }

@@ -3,20 +3,25 @@ using System.Collections;
 
 public class PlayerPhisics : MonoBehaviour {
 
-	private StateManager stateManager;
-	private PlayerSelectorManager playerSelectorManager;
-	private Rigidbody body;
 	private PowerManager powerManager;
+	private StateManager stateManager;
+	private TurnManager turnManager;
+	private PlayerSelectorManager playerSelectorManager;
+	private PowerBar powerBarManager;
+	private Rigidbody body;
+
 	public float physicsForce = 10f;
 
 	void Awake() {
 		powerManager = Component.FindObjectOfType<PowerManager> ();
 		stateManager = Component.FindObjectOfType<StateManager> ();
+		turnManager = Component.FindObjectOfType<TurnManager> ();
+		powerBarManager = Component.FindObjectOfType<PowerBar> ();
 		playerSelectorManager = Component.FindObjectOfType<PlayerSelectorManager> ();
 
 	}
 	void FixedUpdate () {
-		if (stateManager.state == StateManager.States.WAITING_FOR_PHYSICS) {
+		if (stateManager.state == StateManager.States.PLAYER_KICK) {
 			if (playerSelectorManager.currentPlayer) {
 				body = playerSelectorManager.currentPlayer.GetComponent<Rigidbody> ();		
 				StartCoroutine( ApplyPhysics (body));
@@ -26,11 +31,11 @@ public class PlayerPhisics : MonoBehaviour {
 		}
 	}
 	IEnumerator ApplyPhysics(Rigidbody body) {
+		stateManager.state = StateManager.States.TURN_ENDING;
 		Debug.Log ("Add Physics");
-		body.velocity = body.transform.TransformDirection (
-			Vector3.forward * powerManager.power * physicsForce);
-		stateManager.state = StateManager.States.START;
+		body.AddRelativeForce (Vector3.forward * powerManager.power * physicsForce);
 		yield return new WaitForSeconds (2f);
-		stateManager.state = StateManager.States.PLAYER_TURN;
+		powerBarManager.ChangeScale (new Vector3 (0, 11, 1));
+		turnManager.ChangeTurn ();
 	}
 }
