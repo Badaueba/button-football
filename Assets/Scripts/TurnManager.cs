@@ -7,6 +7,7 @@ public class TurnManager : MonoBehaviour {
 	public int teamTurn {get; private set;}
 	private StateManager stateManager;
 	private PlayerSelectorManager playerSelector;
+
 	void Awake () {
 		stateManager = Component.FindObjectOfType<StateManager> ();
 		playerSelector = Component.FindObjectOfType<PlayerSelectorManager> ();
@@ -25,7 +26,7 @@ public class TurnManager : MonoBehaviour {
 		if (this.teamTurn == 0) this.teamTurn = 1;
 		else this.teamTurn = 0;
 		stateManager.state = StateManager.States.PLAYER_TURN;
-		playerSelector.Selection ();
+		playerSelector.Selection (0);
 		Debug.Log ("ChangeTurn: " + teamTurn);
 
 	}

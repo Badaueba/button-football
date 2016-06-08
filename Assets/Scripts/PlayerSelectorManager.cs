@@ -16,7 +16,7 @@ public class PlayerSelectorManager : MonoBehaviour {
 
 	}
 	void Start() {
-		Selection ();
+		Selection (0);
 	}
 
 	void Update() {
@@ -24,7 +24,7 @@ public class PlayerSelectorManager : MonoBehaviour {
 		if (stateManager.state == StateManager.States.PLAYER_TURN) {
 			GetIndex ();
 			if (selectedPlayer != -1) {
-				Selection ();
+				Selection (this.selectedPlayer);
 			}
 		}
 		//Debug
@@ -55,14 +55,18 @@ public class PlayerSelectorManager : MonoBehaviour {
 
 	}
 
-	public void Selection() {
-		
+	public void Selection( int selectedPlayer) {
+		Debug.Log ("team: " + turnManager.teamTurn);	
+
 		foreach (Team team in GameObject.FindObjectsOfType<Team>()) {
 			if (team.id == turnManager.teamTurn) {
 				currentTeam = team.gameObject;
 			}
 		}
-		currentPlayer = currentTeam.GetComponent<Team>().players [selectedPlayer];
+		GameObject[] players = currentTeam.GetComponent<Team> ().players;
+		Debug.Log (players.Length);
+		currentPlayer = players [selectedPlayer];
+
 		Vector3 pos = new Vector3 (
 			currentPlayer.transform.position.x, 0.8f, currentPlayer.transform.position.z);
 

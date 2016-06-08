@@ -10,7 +10,7 @@ public class PlayerPhisics : MonoBehaviour {
 	private PowerBar powerBarManager;
 	private Rigidbody body;
 
-	public float physicsForce = 10f;
+	public float physicsForce;
 
 	void Awake() {
 		powerManager = Component.FindObjectOfType<PowerManager> ();
