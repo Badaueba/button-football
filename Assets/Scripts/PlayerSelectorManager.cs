@@ -33,19 +33,23 @@ public class PlayerSelectorManager : MonoBehaviour {
 	}
 
 	void GetIndex(){
-		if (Input.GetKeyDown (KeyCode.I)) {
+		if (Input.GetKeyDown (KeyCode.I) ||
+			Input.GetKeyDown(KeyCode.Joystick1Button0 )) {
 			selectedPlayer = 0;
 			return;
 		}
-		if (Input.GetKeyUp (KeyCode.J)) {
+		if (Input.GetKeyUp (KeyCode.J) ||
+			Input.GetKeyDown(KeyCode.Joystick1Button1 )) {
 			selectedPlayer = 1;
 			return;
 		}
-		if (Input.GetKeyUp (KeyCode.K)) {
+		if (Input.GetKeyUp (KeyCode.K) ||
+			Input.GetKeyDown(KeyCode.Joystick1Button2 )) {
 			selectedPlayer = 2;
 			return;
 		}
-		if (Input.GetKeyUp (KeyCode.L)) {
+		if (Input.GetKeyUp (KeyCode.L) ||
+			Input.GetKeyDown(KeyCode.Joystick1Button3 ))  {
 			selectedPlayer = 3;
 			return;
 		}
