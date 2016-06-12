@@ -4,9 +4,11 @@ using System.Collections;
 
 public class DirectionManager : MonoBehaviour {
 
-	public Vector3 direction { get; private set;}
+	public Vector3 rotateDirection { get; private set;}
+	public Vector3 translateDirection;
 	public Transform arrow;
 	private StateManager stateManager;
+	PlayerSelectorManager playerSelectorManager;
 	public float speed;
 
 	void Awake() {
@@ -16,6 +18,7 @@ public class DirectionManager : MonoBehaviour {
 		if (stateManager.state == StateManager.States.PLAYER_TURN ) {
 			ChangeDirection ();
 		}
+			
 	}
 
 	void ChangeDirection () {
@@ -26,13 +29,10 @@ public class DirectionManager : MonoBehaviour {
 	}
 
 	void ApplyRotation ( float axis ) {
-		
-		direction = new Vector3 (0, axis * speed * Time.deltaTime , 0);
 
-		//arrow.rotation = Quaternion.Lerp (arrow.rotation, Quaternion.Euler (direction),
-		//	360 * Time.deltaTime);
-		arrow.Rotate(direction);
-		Debug.Log ("Direction: " + direction);
+		rotateDirection = new Vector3 (0, axis * speed * Time.deltaTime , 0);
+		arrow.Rotate(rotateDirection);
+
 	}
 
 

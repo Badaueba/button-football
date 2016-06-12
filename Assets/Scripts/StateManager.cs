@@ -15,13 +15,11 @@ public class StateManager : MonoBehaviour {
 
 	void Start() {
 		state = States.PLAYER_TURN;
-		StartCoroutine (DebugState ());
 	}
 
 	//Debug
 	public IEnumerator DebugState () {
 		while (true) {
-			Debug.Log (state);
 			yield return new WaitForSeconds (1.5f);	
 		}
 

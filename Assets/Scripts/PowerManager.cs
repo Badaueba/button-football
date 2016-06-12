@@ -54,7 +54,7 @@ public class PowerManager : MonoBehaviour {
 		}
 		//atualiza o ultimo input do frame
 		lastInput = input;
-		Debug.Log ("Can i throw?: " + canThrow);
+		//Debug.Log ("Can i throw?: " + canThrow);
 	}
 
 }

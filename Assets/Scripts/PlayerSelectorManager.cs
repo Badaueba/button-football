@@ -4,10 +4,11 @@ using System.Collections;
 public class PlayerSelectorManager : MonoBehaviour {
 
 	private int selectedPlayer = 0;
-	StateManager stateManager;
-	TurnManager turnManager;
-	GameObject currentTeam;
+	private StateManager stateManager;
+	private TurnManager turnManager;
+	private GameObject currentTeam;
 	public GameObject currentPlayer;
+	public Transform arrow;
 	public Light lightSelection;
 
 	void Awake () {
@@ -56,26 +57,25 @@ public class PlayerSelectorManager : MonoBehaviour {
 		else {
 			selectedPlayer = -1;
 		}
-
+			
 	}
 
 	public void Selection( int selectedPlayer) {
-		Debug.Log ("team: " + turnManager.teamTurn);	
-
 		foreach (Team team in GameObject.FindObjectsOfType<Team>()) {
 			if (team.id == turnManager.teamTurn) {
 				currentTeam = team.gameObject;
 			}
 		}
 		GameObject[] players = currentTeam.GetComponent<Team> ().players;
-		Debug.Log (players.Length);
 		currentPlayer = players [selectedPlayer];
-
 		Vector3 pos = new Vector3 (
 			currentPlayer.transform.position.x, 0.8f, currentPlayer.transform.position.z);
 
 		lightSelection.transform.position = pos;
 		lightSelection.transform.SetParent (currentPlayer.transform);
+
+		arrow.position = pos;
+		arrow.SetParent (currentPlayer.transform);
 		selectedPlayer = 0;
 	}
 

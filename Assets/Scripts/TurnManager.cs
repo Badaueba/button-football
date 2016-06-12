@@ -27,7 +27,6 @@ public class TurnManager : MonoBehaviour {
 		else this.teamTurn = 0;
 		stateManager.state = StateManager.States.PLAYER_TURN;
 		playerSelector.Selection (0);
-		Debug.Log ("ChangeTurn: " + teamTurn);
 
 	}
 		
