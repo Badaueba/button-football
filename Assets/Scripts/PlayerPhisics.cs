@@ -41,7 +41,7 @@ public class PlayerPhisics : MonoBehaviour {
 		//body.AddRelativeForce ( Vector3.forward * powerManager.power * physicsForce);
 
 		Debug.Log (v);
-		body.transform.localRotation = Quaternion.Euler (0, 180, 0);
+		body.transform.localRotation = Quaternion.Euler (0, -90, 0);
 		body.AddRelativeForce (arrow.forward * powerManager.power * physicsForce);
 		yield return new WaitForSeconds (2f);
 		powerBarManager.ChangeScale (new Vector3 (0, 11, 1));
